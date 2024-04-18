@@ -1,19 +1,41 @@
-import React from 'react'
+// List.jsx
+import Card from './Card';
 
 const List = () => {
-    const candidateNames = [
-        "William Cotter", "Patrick Denman", "George Devolder-Santos", "Ryan Kalata",
-        "John Avlon", "Saint Jermaine Endeley", "Nancy Goroff", "Nicholas J. LaLota",
-        "Rob Lubin", "Andrew Garbarino", "Daniel Goldman", "Yvette D. Clarke",
-        "Nicole Malliotakis", "Alexandria Ocasio-Cortez", "Jerrold Nadler", 
-        "Tom Suozzi", "Grace Meng", "Hakeem Jeffries", "Ritchie Torres", 
-        "Jamaal Bowman", "Mondaire Jones", "Lee Zeldin", "Kathleen Rice",
-        "Paul Tonko", "Elise Stefanik", "Mike Lawler", "Antonio Delgado",
-        "Sean Patrick Maloney", "Chris Jacobs", "Joe Morelle"
+    const candidates = [
+      {
+        id: '99cdceab-10a9-416b-841c-e07ba0fd19fc',
+        name: "William Cotter",
+        age: 45,
+        party: 'Democratic',
+        state: 'NJ'
+      }, 
+      {
+        id: '11b9858c-6206-4837-8b11-ffd075183242',
+        name: 'Rizel Jackson',
+        age: '38',
+        party: 'Independent',
+        state: 'NY' 
+      }, 
+      {
+        id: 'c4a2b5a8-3d9a-445b-9a4b-eb2f144efe8f',
+        name: 'Tarry LaCraig',
+        age: '50',
+        party: 'Republican',
+        state: 'SC' 
+      }, 
+      
     ];
 
   return (
-    <div>List</div>
+    <div>
+        <h2>List</h2>
+        {candidates.map(candidate => {
+          return (
+            <Card key={candidate.id} candidate={candidate}/>
+          )
+        })}
+    </div>
   )
 }
 
